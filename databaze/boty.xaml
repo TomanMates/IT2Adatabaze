@@ -1,0 +1,54 @@
+﻿<Window x:Class="databaze.ShoeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Přidat / Upravit botu" Height="360" Width="420" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Model:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtModel" Margin="6,6,0,6"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Content="Značka:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtBrand" Margin="6,6,0,6"/>
+
+            <Label Grid.Row="2" Grid.Column="0" Content="Rok:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtYear" Margin="6,6,0,6"/>
+
+            <Label Grid.Row="3" Grid.Column="0" Content="Typ:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtType" Margin="6,6,0,6" ToolTip="např. Road / Trail"/>
+
+            <Label Grid.Row="4" Grid.Column="0" Content="Velikost:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtSize" Margin="6,6,0,6"/>
+
+            <Label Grid.Row="5" Grid.Column="0" Content="Počet ks:" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtQuantity" Margin="6,6,0,6"/>
+
+            <Label Grid.Row="6" Grid.Column="0" Content="Dostupná:" VerticalAlignment="Center"/>
+            <CheckBox Grid.Row="6" Grid.Column="1" x:Name="chkAvailable" Margin="6,6,0,6" VerticalAlignment="Center"/>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+            <Button Content="Uložit" Width="90" Margin="0,0,8,0" Click="btnSave_Click"/>
+            <Button Content="Zrušit" Width="90" Click="btnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

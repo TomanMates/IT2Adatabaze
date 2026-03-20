@@ -1,0 +1,42 @@
+﻿<Window x:Class="databaze.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Evidence běžeckých bot" Height="520" Width="900">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,8">
+            <Label Content="Hledat:" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtSearch" Width="250" Margin="6,0,12,0" VerticalAlignment="Center"
+                     TextChanged="txtSearch_TextChanged"/>
+            <Button x:Name="btnAdd" Content="Přidat" Click="btnAdd_Click" Width="90" Margin="0,0,6,0"/>
+            <Button x:Name="btnEdit" Content="Upravit" Click="btnEdit_Click" Width="90" Margin="0,0,6,0"/>
+            <Button x:Name="btnDelete" Content="Smazat" Click="btnDelete_Click" Width="90"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgShoes"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="60"/>
+                <DataGridTextColumn Header="Model" Binding="{Binding Model}" Width="*"/>
+                <DataGridTextColumn Header="Značka" Binding="{Binding Brand}" Width="120"/>
+                <DataGridTextColumn Header="Rok" Binding="{Binding YearReleased}" Width="80"/>
+                <DataGridTextColumn Header="Typ" Binding="{Binding Type}" Width="100"/>
+                <DataGridTextColumn Header="Velikost" Binding="{Binding Size}" Width="80"/>
+                <DataGridTextColumn Header="Ks" Binding="{Binding Quantity}" Width="60"/>
+                <DataGridCheckBoxColumn Header="Dostupná" Binding="{Binding IsAvailable}" Width="90"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Grid.Row="2" Text="Data jsou uchovávána pouze v paměti po dobu běhu aplikace." 
+                   HorizontalAlignment="Left" Margin="0,8,0,0" Foreground="Gray"/>
+    </Grid>
+</Window>
